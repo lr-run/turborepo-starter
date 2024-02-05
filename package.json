@@ -1,16 +1,17 @@
 {
-  "name": "turbo-template",
   "private": true,
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "lint:fix": "turbo lint:fix",
+    "format": "prettier --check \"**/*.{js,ts,jsx,tsx}\"",
+    "format:fix": "prettier --write \"**/*.{js,ts,jsx,tsx}\"",
+    "pack": "turbo run pack",
+    "publish": "turbo run publish"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
-    "prettier": "^3.1.1",
+    "prettier": "^3.2.5",
     "turbo": "latest"
   },
   "packageManager": "pnpm@8.9.0",

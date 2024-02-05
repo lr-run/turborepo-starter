@@ -4,14 +4,25 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
     "lint": {
       "dependsOn": ["^lint"]
     },
+    "lint:fix": {
+      "dependsOn": ["^lint:fix"]
+    },
     "dev": {
       "cache": false,
       "persistent": true
+    },
+    "pack": {
+      "dependsOn": ["build"],
+      "inputs": ["dist/**"],
+      "outputs": ["package.tgz"]
+    },
+    "publish": {
+      "cache": false
     }
   }
 }

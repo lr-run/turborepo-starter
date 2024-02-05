@@ -1,0 +1,30 @@
+{
+  "name": "@lr-run/example-package",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./index.js",
+  "module": "./index.mjs",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "lint": "eslint --ext js,ts src",
+    "lint:fix": "eslint --ext js,ts src --fix",
+    "build": "tsx ./scripts/build.ts",
+    "pack": "(cd dist && npm pack --pack-destination ..) && rm -f package.tgz && mv *.tgz package.tgz",
+    "publish": "npm publish package.tgz --access public"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
+    "@typescript-eslint/parser": "^6.20.0",
+    "eslint": "^8",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-unused-imports": "^3.0.0",
+    "fs-extra": "^11.2.0",
+    "tsup": "^8.0.1",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  }
+}
